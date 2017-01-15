@@ -49,7 +49,7 @@ function createWindow() {
     mainWindow.setMenu(null);
 
     // and load the index.html of the app.
-    mainWindow.loadURL('file://' + __dirname + '/index.html');
+    mainWindow.loadURL('file://' + __dirname + '/web/index.html');
 
     // Open the DevTools.
     if (settings.getSync("devTools"))
