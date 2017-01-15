@@ -1,0 +1,6 @@
+{
+    "fullscreen": true,
+    "kiosk": true,
+    "devTools": false,
+    "hideCursor": false
+}

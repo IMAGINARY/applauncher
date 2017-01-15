@@ -1,0 +1,67 @@
+{
+    "name": "applauncher",
+    "productName": "AppLauncher",
+    "version": "0.1.0",
+    "description": "A graphical application launcher based on web technologies",
+    "homepage": "https://github.com/IMAGINARY/???#readme",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/IMAGINARY/???.git"
+    },
+    "bugs": {
+        "url": "https://github.com/IMAGINARY/???/issues",
+        "email": "info@imaginary.org"
+    },
+    "main": "main.js",
+    "keywords": [
+        "IMAGINARY",
+        "app",
+        "launch",
+        "modern",
+        "menu"
+    ],
+    "author": "IMAGINARY gGmbH <info@imaginary.org>",
+    "license": "Apache-2.0",
+    "devDependencies": {
+        "electron": "^1.4.12",
+        "electron-rebuild": "^1.4.0",
+        "electron-builder": "^10.8.1"
+    },
+    "dependencies": {
+        "electron-settings": "^2.2.2"
+    },
+    "scripts": {
+        "start": "electron .",
+        "rebuild": "electron-rebuild",
+        "pack": "build --dir",
+        "dist": "build"
+    },
+    "build": {
+        "appId": "org.imaginary.applauncher",
+        "mac": {
+            "category": "public.app-category.public.app-category.utilities"
+        },
+        "dmg": {
+            "window": {
+                "width": 530,
+                "height": 331
+            },
+            "contents": [{
+                "x": 145,
+                "y": 155
+            }, {
+                "x": 395,
+                "y": 155,
+                "type": "link",
+                "path": "/Applications"
+            }]
+        },
+        "linux": {
+            "executableName": "app-launcher",
+            "target": ["AppImage", "deb", "rpm"],
+            "category": "Utility",
+            "packageCategory": "Utility"
+        },
+        "extraFiles": []
+    }
+}
