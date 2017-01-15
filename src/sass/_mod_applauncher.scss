@@ -1,0 +1,10 @@
+$tr-open-info-len: 1s;
+$tr-open-app-len: 1s;
+
+body {
+  transition: background-color 1s;
+}
+
+body.app-open {
+  background-color: $color-black-real;
+}

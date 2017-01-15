@@ -1,0 +1,37 @@
+extends tpl/page
+
+block init
+
+block head
+
+block title
+  | IMAGINARY App Launcher
+
+block main
+  .main
+    h1.logo IMAGINARY
+    .info-pane(data-info-pane='info')
+      include include/info
+    .info-pane.info-pane-smalltext(data-info-pane='credits')
+      include include/credits
+    ul.app-list.app-list-4
+      li
+        a.button.app-button(href='#', data-launch-app='snapshots-slider')
+          img.screenshot(src='img/apps/snapshotsslider.jpg')
+          .name Snapshots slider
+      li
+        a.button.app-button(href='#', data-launch-app='surfer')
+          img.screenshot(src='img/apps/surfer.jpg')
+          .name Surfer
+      li
+        a.button.app-button(href='#', data-launch-app='morenaments')
+          img.screenshot(src='img/apps/morenaments.jpg')
+          .name Morenaments
+      li
+        a.button.app-button(href='#', data-launch-app='karten-der-erde')
+          img.screenshot(src='img/apps/kartendererde.jpg')
+          .name Karten der Erde
+    .util-bar
+      a.button.ripple.util-button.info-button(href='#', data-open-info-pane='info') Info
+      a.button.ripple.util-button.credits-button(href='#', data-open-info-pane='credits') Credits
+      a.button.ripple.util-button.credits-button(href='#', data-close-info-pane) Zurück
