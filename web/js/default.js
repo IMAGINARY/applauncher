@@ -1,5 +1,19 @@
 AppLauncher = (function() {
 
+  const nodeJSStuff = (function() {
+    try {
+      var electronMainProcess = require("electron").remote.process;
+      return {
+        stdout: electronMainProcess.stdout,
+        stderr: electronMainProcess.stderr,
+        childProcess: require("child_process"),
+        settings: require("electron-settings").getSync("")
+      };
+    } catch(err) {
+      return undefined;
+    }
+  })();
+
   function maskEvents() {
     $('body').css({
       pointerEvents: 'none'
@@ -51,10 +65,15 @@ AppLauncher = (function() {
     $(appButton).addClass('selected');
     createLaunchAnimation(appButton);
     $('body').addClass('app-open');
-    // TODO: Launch the app here (appID holds the name). Remove the timer. Call exitApp() on then().
-    setTimeout(function() {
-      exitApp();
-    }, 3000);
+    if(!(typeof nodeJSStuff === 'undefined')) {
+      const command = nodeJSStuff.settings.apps[appID];
+      console.log(appID + ": " + command + " (shell: " + nodeJSStuff.settings.shell + ")");
+      const appProcess = nodeJSStuff.childProcess.spawn(command, [], {stdio: [ 'ignore', nodeJSStuff.stdout, nodeJSStuff.stderr ], shell: nodeJSStuff.settings.shell} );
+      appProcess.on('exit', exitApp);
+    } else {
+      // dummy if you are using this without nodejs/electron
+      setTimeout(exitApp, 3000);
+    }
   }
 
   function exitApp() {

@@ -1,6 +1,13 @@
 {
     "fullscreen": true,
-    "kiosk": true,
+    "kiosk": false,
     "devTools": false,
-    "hideCursor": false
+    "hideCursor": false,
+    "shell": true,
+    "apps": {
+        "snapshots-slider": "sleep 1",
+        "surfer": "sleep 2",
+        "morenaments": "sleep 3",
+        "karten-der-erde": "sleep 4"
+    }
 }
