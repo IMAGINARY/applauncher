@@ -3,6 +3,7 @@ $tr-open-app-len: 1s;
 
 body {
   transition: background-color 1s;
+  overflow: hidden;
 }
 
 body.app-open {

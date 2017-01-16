@@ -644,7 +644,8 @@ p, dl, hr, h1, h2, h3, h4, h5, h6, ol, ul, pre, table, address, fieldset, figure
       margin-right: 0; } }
 
 body {
-  transition: background-color 1s; }
+  transition: background-color 1s;
+  overflow: hidden; }
 
 body.app-open {
   background-color: #000; }
@@ -686,7 +687,6 @@ body.app-open {
   margin: 0 auto;
   width: 90vw;
   height: 30vh;
-  overflow: hidden;
   transition-duration: 1s;
   transition-property: bottom, left, width; }
   .app-list li {
@@ -711,7 +711,6 @@ body.app-open {
   display: block;
   width: 100%;
   height: 100%;
-  overflow: hidden;
   transition-property: opacity;
   transition-duration: 0.5s; }
   .app-button.selected {

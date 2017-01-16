@@ -8,7 +8,6 @@
   margin: 0 auto;
   width: 90vw;
   height: 30vh;
-  overflow: hidden;
   transition-duration: $tr-open-info-len;
   transition-property: bottom, left, width;
   li {
@@ -51,7 +50,6 @@
   display: block;
   width: 100%;
   height: 100%;
-  overflow: hidden;
   transition-property: opacity;
   transition-duration: $tr-open-app-len / 2;
 
