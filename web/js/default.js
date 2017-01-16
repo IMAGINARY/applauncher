@@ -89,6 +89,11 @@ AppLauncher = (function() {
   }
 
   function init() {
+    // Disable dragging
+    $('body').on('dragstart', function() {
+      return false;
+    });
+
     // Init app launching buttons
     $('[data-launch-app]').on('click', function() {
       launchApp(this);
