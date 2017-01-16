@@ -3,11 +3,17 @@ AppLauncher = (function() {
   const nodeJSStuff = (function() {
     try {
       var electronMainProcess = require("electron").remote.process;
+      var settings = require("electron-settings").getSync("");
+      if (settings.hideCursor) {
+        // hide the cursor if necessary
+        var lastCSS = document.styleSheets[document.styleSheets.length - 1];
+        lastCSS.insertRule("* { cursor: none; }", lastCSS.cssRules.length);
+      }
       return {
         stdout: electronMainProcess.stdout,
         stderr: electronMainProcess.stderr,
         childProcess: require("child_process"),
-        settings: require("electron-settings").getSync("")
+        settings: settings
       };
     } catch(err) {
       return undefined;
