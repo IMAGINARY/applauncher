@@ -1,7 +1,7 @@
 'use strict';
 
 var public_dir = '../web';
-var site_path = 'localhost/imaginary_appboard';
+var site_path = 'localhost/imaginary_applauncher';
 
 var gulp = require('gulp');
 var browserSync = require('browser-sync').create();
